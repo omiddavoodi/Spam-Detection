@@ -1,0 +1,20 @@
+This is a simple spam email detection python 3 module by Omid Davoodi, Iran University of Science and Technology as a project for AI class.
+It classifies the emails using a variation of Perceptron algorithm.
+
+This code is available under public domain.
+
+Dataset is from http://www.aueb.gr/users/ion/data/enron-spam/
+
+dateset-cleaner1.py prepares the "spam" training data for the program. Currently only GP.tar is a spam dataset.
+
+dateset-cleaner2.py prepares the "ham" training data for the program. Currently this includes beck-s.tar, farmer-d.tar and kaminski-v.tar.
+
+sdvectorizer.py containts a function that converts a document into a multi-dimentional vector suitable for use in the classifier.
+
+sdvectormul.py contains a function to calculate the dot product of two such vectors
+
+sdlearner.py generates the knowledge base of the classifier
+
+sddetector.py contains a function that classifies a new document using the existing knowledge base.
+
+w.txt contains the processed knowledge base of the classifier, and is created by sdlearner.py
