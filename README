@@ -27,3 +27,6 @@ sdlearner.py generates the knowledge base of the classifier
 sddetector.py contains a function that classifies a new document using the existing knowledge base.
 
 w.txt contains the processed knowledge base of the classifier, and is created by sdlearner.py
+
+
+You need snowballstemmer to run the code. A version is included in the repository.
