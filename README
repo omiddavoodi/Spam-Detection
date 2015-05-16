@@ -4,6 +4,15 @@ It classifies the emails using a variation of Perceptron algorithm.
 This code is available under public domain.
 
 Dataset is from http://www.aueb.gr/users/ion/data/enron-spam/
+You have to download the following files:
+
+Spam Mail Dataset:
+GP.tar
+
+Normal Mail Dataset:
+beck-s.tar
+farmer-d.tar
+kaminski-v.tar
 
 dateset-cleaner1.py prepares the "spam" training data for the program. Currently only GP.tar is a spam dataset.
 
