@@ -45,7 +45,7 @@ spamfiles = []
 ee = os.listdir('''GP.tar/GP''')
 #ee = os.listdir('''farmer-d.tar/farmer-d''')
 eef = []
-for i in ee[5:7]:
+for i in ee[5:8]:
     eef.append('''GP.tar/GP/''' + i)
 #    eef.append('''farmer-d.tar/farmer-d/''' + i)
     
@@ -63,7 +63,7 @@ for i in spamfiles:
     t = check(i)
     if (t):
         nall += 1
-        if (t >= 0):
+        if (t >= -0.02):
             nspam += 1
         else:
             nham += 1
@@ -74,7 +74,7 @@ hamfiles = []
 #ee = os.listdir('''GP.tar/GP''')
 ee = os.listdir('''kaminski-v.tar/kaminski-v''')
 eef = []
-for i in ee[0:15]:
+for i in ee[20:40]:
     eef.append('''kaminski-v.tar/kaminski-v/''' + i)
 #    eef.append('''GP.tar/GP/''' + i)
     
