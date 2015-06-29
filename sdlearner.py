@@ -1,31 +1,40 @@
 import sdvectorizer
 import sdvectormul
 #import sdvectorfind
-import os
+import os, datetime
 
 def learn():
     spamfiles = []
     ee = os.listdir('''GP.tar/GP''')
     eef = []
-    for i in ee[:3]:
+    for i in ee[:4]:
         eef.append('''GP.tar/GP/''' + i)
     for t in (eef):
         jj = os.listdir(t)
         for i in range(len(jj)):
             jj[i] = t + '/' + jj[i]
         spamfiles.extend(jj)
-        
+    print (len(spamfiles))
     hamfiles = []
     ee = os.listdir('''beck-s.tar/beck-s''')
     eef = []
     for i in ee:
         eef.append('''beck-s.tar/beck-s/''' + i)
-        
+
+    ee = os.listdir('''kaminski-v.tar/kaminski-v''')
+    for i in ee[:len(ee)//3]:
+        eef.append('''kaminski-v.tar/kaminski-v/''' + i)
+
+    ee = os.listdir('''farmer-d.tar/farmer-d''')
+    for i in ee[:len(ee)//2]:
+        eef.append('''farmer-d.tar/farmer-d/''' + i)
+    
     for t in (eef):
         jj = os.listdir(t)
         for i in range(len(jj)):
             jj[i] = t + '/' + jj[i]
         hamfiles.extend(jj)
+    print (len(hamfiles))
     allv = []
     allw = {}
     numwords = 0
@@ -62,15 +71,18 @@ def learn():
     w = sorted(w)
 
     n = 0
-    maxn = 8
+    maxn = 12
     learningrate = 0.3
     wlen = len(w)
     print (len (allv))
     while (n < maxn):
+        before = datetime.datetime.now()
         print (n)
-        #v = 0
+        v = 0
+        vv = 0
         for i in allv:
-            #v += 1
+            v += 1
+            vv += 1
             #print (v)
             ilen = len(i)
             y = sdvectormul.multiply(w, i[1:])
@@ -97,7 +109,11 @@ def learn():
                     k += 1
                 elif (wj0 < ik0):
                     j += 1
+            if v == 500:
+                print (vv)
+                v = 0
         n += 1
+        print (datetime.datetime.now() - before)
                     
     hh = ""
     for i in allw:

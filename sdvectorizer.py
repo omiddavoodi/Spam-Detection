@@ -690,7 +690,12 @@ def vectorize(filename):
     num = True
     halfnum = False
     numwords = 0.0
+    uppercase = 0.0
+    allchars = 0
     for i in ss:
+        allchars += 1
+        if (i.isupper()):
+            uppercase += 1
         if (i in separators):
             if (lastword):
                 if (num):
@@ -764,10 +769,12 @@ def vectorize(filename):
                     else:
                         vect[lastword] = 1
         lastword = ''
-        
+    if (allchars != 0):
+        vect['$'] = uppercase / allchars
     if (numwords):
         for i in vect:
-            vect[i] /= numwords
+            if i != '$':
+                vect[i] /= numwords
     
     return vect
 
